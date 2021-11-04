@@ -20,7 +20,6 @@ export default {
         { section: "DIVIDER" },
         { section: "HEADER", label: "HydroCord" },
         { section: "HydroCord_PLUGINS", label: "Plugins", element: Plugins },
-        { section: "HydroCord_THEMES", label: "Themes", element: Themes }
       ];
       items.splice(position, 0, ...HydroCordSettings)
 
