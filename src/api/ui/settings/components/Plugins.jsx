@@ -43,7 +43,7 @@ export default () => {
         <FormTitle tag="h1">Plugins</FormTitle>
         <Flex basis="auto" grow={1} shrink={1}>
           <TextInput
-            className="cumcord-plugin-import"
+            className="HydroCord-plugin-import"
             placeholder="https://example.com/plugin"
             type="text"
             value={input}
@@ -62,7 +62,7 @@ export default () => {
             Add plugin
           </Button>
         </Flex>
-        <FormDivider className="cumcord-plugin-divider" />
+        <FormDivider className="HydroCord-plugin-divider" />
         {Object.keys(plugins.pluginCache.ghost).map((plugin) => {
           return <PluginCard pluginId={plugin} />;
         })}

@@ -11,9 +11,9 @@ export default class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.hasError) {
-      return <div className="cumcord-error-handler">
-        <h1 className="cumcord-error-handler-title">Oops, we had a fucky wucky. (Cumcord)</h1>
-        <code className="cumcord-error-handler-code">{`${this.state.error}` /* wtf lol */}</code>
+      return <div className="HydroCord-error-handler">
+        <h1 className="HydroCord-error-handler-title">Oops, we had a fucky wucky. (HydroCord)</h1>
+        <code className="HydroCord-error-handler-code">{`${this.state.error}` /* wtf lol */}</code>
       </div>;
     }
 

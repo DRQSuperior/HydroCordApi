@@ -3,7 +3,7 @@ DISCLAIMER:
 This code is very similar to this code: https://github.com/rauenzi/BDPluginLibrary/blob/2b69190ec2f304a977669ee23b2ec8ed19e8ce0c/src/modules/utilities.js#L140-L166
 I read through the code and made my own implementation that is fairly similar to the original. I did not steal it, I only used it as a reference.
 
-I feel I need to make this very clear: Cumcord's code is original and I'm not claiming anything that isn't original as my own.
+I feel I need to make this very clear: HydroCord's code is original and I'm not claiming anything that isn't original as my own.
 We share, we don't steal.
 */
 

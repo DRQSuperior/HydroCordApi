@@ -21,15 +21,15 @@ function uninject() {
   toasts.uninitializeToasts();
   patcher.unpatchAllCss();
 
-  window.cumcord = undefined;
-  delete window.cumcord;
+  window.HydroCord = undefined;
+  delete window.HydroCord;
   return true;
 }
 
 async function initializeAPI() {
-  utils.logger.log("Initializing Cumcord API");
+  utils.logger.log("Initializing HydroCord API");
 
-  window.cumcord = {
+  window.HydroCord = {
     uninject,
     modules: {
       webpackModules,
@@ -74,23 +74,23 @@ async function initializeAPI() {
 
   // Native-only APIs
   if (window["DiscordNative"]) {
-    window.cumcord["dev"] = {
+    window.HydroCord["dev"] = {
       toggleDevMode: devmode.toggleDevMode,
       showSettings: devmode.showSettings,
     }
   }
   
   // Inject error boundary CSS
-  patcher.injectCSS(`.cumcord-error-handler{font-family: var(--font-display);color:var(--text-normal);padding:16px}.cumcord-error-handler-title{margin-bottom:7px;font-weight:bold;font-size:24px}.cumcord-error-handler-code{background-color:var(--background-secondary);font-family:var(--font-code);user-select:text}`);
+  patcher.injectCSS(`.HydroCord-error-handler{font-family: var(--font-display);color:var(--text-normal);padding:16px}.HydroCord-error-handler-title{margin-bottom:7px;font-weight:bold;font-size:24px}.HydroCord-error-handler-code{background-color:var(--background-secondary);font-family:var(--font-code);user-select:text}`);
   
   toasts.initializeToasts();
   await plugins.initializePluginStore();
   settings.initializeSettings();
-  window.cumcord.plugins.installed = plugins.pluginCache;
-  window.cumcord.plugins.loaded = plugins.loadedPlugins;
+  window.HydroCord.plugins.installed = plugins.pluginCache;
+  window.HydroCord.plugins.loaded = plugins.loadedPlugins;
   await plugins.initializePlugins();
   websocket.initializeSocket();
-  utils.logger.log("Cumcord is injected!");
+  utils.logger.log("HydroCord is injected!");
 }
 
 export default initializeAPI;

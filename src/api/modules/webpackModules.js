@@ -113,7 +113,7 @@ const webpackModules = {
       }
     }),
 
-  // THIS IS NOT PERFORMANT. This function is exclusively to be used by those searching for modules to later fetch with other parts of Cumcord's webpackModules API.
+  // THIS IS NOT PERFORMANT. This function is exclusively to be used by those searching for modules to later fetch with other parts of HydroCord's webpackModules API.
   findByKeywordAll: (...searchStrings) =>
     webpackModules.findAll((module) =>
       searchStrings.every(

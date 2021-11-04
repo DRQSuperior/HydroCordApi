@@ -36,7 +36,7 @@ export default (props) => {
               plugins.loadedPlugins.ghost[props.pluginId].settings
             );
           }}
-          className="cumcord-card-settings"
+          className="HydroCord-card-settings"
           xmlns="http://www.w3.org/2000/svg"
           height="24px"
           viewBox="0 0 24 24"
@@ -53,21 +53,21 @@ export default (props) => {
 
   return (
     <Card
-      className="cumcord-plugin-card"
+      className="HydroCord-plugin-card"
       type="cardPrimary"
       outline={false}
       editable={false}
     >
       <Flex justify={Flex.Justify.BETWEEN} align={Flex.Align.CENTER}>
-        <div className="cumcord-card-header">
-          <Header className="cumcord-card-title">{plugin.manifest.name}</Header>
-          <Text className="cumcord-card-author" tag="h5">
+        <div className="HydroCord-card-header">
+          <Header className="HydroCord-card-title">{plugin.manifest.name}</Header>
+          <Text className="HydroCord-card-author" tag="h5">
             {" "}
             by <strong>{plugin.manifest.author}</strong>
           </Text>
         </div>
-        <div className="cumcord-card-right">
-          <div className="cumcord-card-buttons">
+        <div className="HydroCord-card-right">
+          <div className="HydroCord-card-buttons">
             {settings}
 
             {/* Copy button */}
@@ -76,7 +76,7 @@ export default (props) => {
                 showToast({ content: "Copied plugin URL to clipboard.", duration: 1300 });
                 copyText(props.pluginId);
               }}
-              className="cumcord-card-copy"
+              className="HydroCord-card-copy"
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
               viewBox="0 0 24 24"
@@ -100,12 +100,12 @@ export default (props) => {
                   (conf) => {
                     if (conf) {
                       plugins.removePlugin(props.pluginId);
-                      del(`${props.pluginId}_CUMCORD_STORE`);
+                      del(`${props.pluginId}_HydroCord_STORE`);
                     }
                   }
                 );
               }}
-              className="cumcord-card-delete"
+              className="HydroCord-card-delete"
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
               viewBox="0 0 24 24"
@@ -126,7 +126,7 @@ export default (props) => {
           />
         </div>
       </Flex>
-      <Markdown className="cumcord-card-description">
+      <Markdown className="HydroCord-card-description">
         {plugin.manifest.description}
       </Markdown>
     </Card>

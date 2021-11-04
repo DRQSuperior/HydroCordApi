@@ -1,5 +1,5 @@
 import initializeAPI from "./api/initialize";
 
-if (window.cumcord) throw new Error("Cumcord is already injected");
+if (window.HydroCord) throw new Error("HydroCord is already injected");
 
 initializeAPI();

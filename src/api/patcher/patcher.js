@@ -5,7 +5,7 @@ let patches = [];
 
 function injectCSS(css) {
   const style = document.createElement("style");
-  style.className = "CUMCORD_INJECTED_CSS";
+  style.className = "HYDROCORD_INJECTED_CSS";
   style.textContent = css;
   document.head.appendChild(style);
 
@@ -19,7 +19,7 @@ function injectCSS(css) {
 }
 
 function unpatchAllCss() {
-  for (const style of document.querySelectorAll(".CUMCORD_INJECTED_CSS")) {
+  for (const style of document.querySelectorAll(".HYDROCORD_INJECTED_CSS")) {
     style.remove();
   }
 }
@@ -36,16 +36,16 @@ function patch(functionName, functionParent, callback, type) {
     );
   }
 
-  if (!Object.hasOwnProperty.bind(functionParent)("CUMCORD_INJECTIONS")) {
-    functionParent.CUMCORD_INJECTIONS = {};
+  if (!Object.hasOwnProperty.bind(functionParent)("HYDROCORD_INJECTIONS")) {
+    functionParent.HYDROCORD_INJECTIONS = {};
   }
 
-  if (!functionParent.CUMCORD_INJECTIONS.hasOwnProperty(functionName)) {
+  if (!functionParent.HYDROCORD_INJECTIONS.hasOwnProperty(functionName)) {
     const patchId = uuid.v4();
-    functionParent.CUMCORD_INJECTIONS[functionName] = patchId;
+    functionParent.HYDROCORD_INJECTIONS[functionName] = patchId;
   }
 
-  const injectionId = functionParent.CUMCORD_INJECTIONS[functionName];
+  const injectionId = functionParent.HYDROCORD_INJECTIONS[functionName];
 
   if (!patches[injectionId]) {
     const originalFunction = functionParent[functionName];
@@ -150,8 +150,8 @@ function unpatch(patchId, hookId, type) {
     if (hooks[type][hookId]) {
       delete hooks[type][hookId];
 
-      patch.functionParent.CUMCORD_INJECTIONS[patch.functionName] = undefined;
-      delete patch.functionParent.CUMCORD_INJECTIONS[patch.functionName];
+      patch.functionParent.HYDROCORD_INJECTIONS[patch.functionName] = undefined;
+      delete patch.functionParent.HYDROCORD_INJECTIONS[patch.functionName];
 
       // If there are no more hooks for every type, remove the patch
       const types = Object.keys(hooks);
@@ -161,7 +161,7 @@ function unpatch(patchId, hookId, type) {
         })
       ) {
         patch.functionParent[patch.functionName] = patch.originalFunction;
-        delete patch.functionParent.CUMCORD_INJECTIONS;
+        delete patch.functionParent.HYDROCORD_INJECTIONS;
         patches[patchId] = undefined;
         delete patches[patchId];
       }
