@@ -18,8 +18,6 @@ export default {
 
       const HydroCordSettings = [
         { section: "DIVIDER" },
-        { section: "HEADER", label: "HydroCord Client Settings" },
-        { section: "DIVIDER" },
         { section: "HEADER", label: "HydroCord" },
         { section: "HydroCord_PLUGINS", label: "Plugins", element: Plugins }
       ];
