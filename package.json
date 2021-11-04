@@ -1,0 +1,20 @@
+{
+  "name": "cumcord",
+  "version": "0.0.1",
+  "description": "A client mod in a client mod.",
+  "main": "src/index.js",
+  "repository": "https://github.com/Cumcord/Cumcord",
+  "author": "creatable",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "esbuild": "^0.12.29",
+    "esbuild-plugin-alias": "^0.1.2"
+  },
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "idb-keyval": "^5.1.5",
+    "nests": "^2.0.4"
+  }
+}
